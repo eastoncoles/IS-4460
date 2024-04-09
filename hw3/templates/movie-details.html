@@ -1,0 +1,46 @@
+<HTML>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css" > 
+
+    <HEAD>
+        <TITLE>
+            Movie Details
+        </TITLE>
+    </HEAD>
+    <BODY>
+        <div class="h1">
+            <H1> 
+                Cinemark
+            </H1>
+        </div>
+        <div class="h2">
+            <h2>
+                {{movie.title}}
+            </h2>
+        </div>
+        <div class="h4">
+            <h4>
+                {{movie.description}}<br>
+                {{movie.runtime}}<br>
+                {{movie.release_year}}<br>
+                {{movie.director}}<br>
+                {{movie.genre}}<br>
+                {{movie.rating}}<br>
+                {{movie.budget}}<br>
+            </h4>
+        </div>
+
+        <div class="h4">
+            <a href="{% url 'movie-list' %}">Return to movie list</a>
+        </div>
+
+        <div class="h4">
+            <a href="{% url 'movie-update' movie.id %}">Click here to update movie</a>
+            <br>
+            <a href="{% url 'movie-delete' movie.id %}">Click here to delete movie</a>
+        </div>
+
+
+
+    </BODY>
+</HTML>

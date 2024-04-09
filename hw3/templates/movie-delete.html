@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<HTML>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css" > 
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Delete Movie</h1>
+        <p>Title: {{ movie.title }}</p>
+        <form method="post" action="{% url 'movie-delete' movie.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a href="{% url 'movie-list' %}" class="btn btn-primary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

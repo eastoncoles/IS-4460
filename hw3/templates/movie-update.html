@@ -1,0 +1,33 @@
+<HTML>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css" > 
+
+    <HEAD>
+        <TITLE>
+            Update a Movie
+        </TITLE>
+    </HEAD>
+
+    <BODY>
+        <div class="h1">
+            <H1> 
+                Cinemark
+            </H1>
+        </div>
+
+        <div class="h2">
+            <h2>
+                Update a Movie
+            </h2>
+        </div>
+
+        <div class="h4">
+            <h4>
+                <form method="post" action="{% url 'movie-update' movie_id=movie.pk %}">
+                    {% csrf_token %}
+                    {{form}}
+                    <button type="submit">Update</button>
+                </form>
+            </h4>
+        </div>
+</HTML>

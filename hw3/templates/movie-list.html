@@ -1,0 +1,43 @@
+<HTML>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css" > 
+
+    <HEAD>
+        <TITLE>
+            Movie List
+        </TITLE>
+    </HEAD>
+
+    <BODY>
+    <div class="h1">
+        <H1> 
+            Cinemark
+        </H1>
+    </div>
+    <div class="h2">
+        <h2>
+            Movie List
+        </h2>
+        <h2>
+            
+        </h2>
+    </div>
+    <div class="h2">
+        {% for movie in movies %}
+            <h1>
+                {{movie.title}}
+            </h1>
+            <form action="{% url 'movie-detail' movie.id %}" method = "GET">
+                <button type="submit" class="details-button">View Details</button>
+            </form>
+        {% endfor %}
+    </div>
+    
+
+    <div class="h4">
+        <a href="{% url 'movie-add' %}">Click here to add a movie</a>
+    </div>
+    
+    </BODY>
+
+</HTML>
